@@ -1,0 +1,29 @@
+{
+  "default": {
+    "paths": ["tests/Feature"],
+    "publishQuiet": true,
+    "dryRun":false,
+    "formatOptions": {
+      "snippetInterface": "async-await",
+      "resultsDir": "allure-results"
+    },
+    "worldParameters": {
+      "storageState": "auth.json"
+    },
+    "require": [
+      "tests/Stepdef/*.steps.js",
+      "tests/Hooks/*.js"
+    ],
+    "parallel": 1,
+    "retry": 1,
+    "retryTagFilter": "@failed",
+    "format": [
+      "summary",
+      "json:reports/cucumber_report.json",
+      "progress",
+      "html:reports/cucumber_report.html",
+      "allure-cucumberjs/reporter"
+    ],
+    "tags": "@sanity"
+  }
+}
